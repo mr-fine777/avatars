@@ -112,16 +112,21 @@
   flex: 1 0 auto;
 }
 .tiered-hero-cards .centerdownload {
+  box-sizing: border-box;
+  display: grid;
+  align-self: stretch;
   width: 100%;
   margin-top: 24px;
 }
 .tiered-hero-cards .downloaders {
   box-sizing: border-box;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-width: 0;
   min-height: 44px;
+  margin: 0;
   padding: 11px 12px;
   text-align: center;
 }
