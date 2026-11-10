@@ -13,19 +13,20 @@
 	html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #f7f4ef; }
 	body { color: #29232e; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
 	#root, .css-r3u2tt { width: 100%; height: 100%; max-width: 100% !important; background: transparent !important; }
-	.css-c5dwha { box-sizing: border-box; width: 100%; height: 100%; padding: 10px 16px 16px !important; }
+	.css-c5dwha { box-sizing: border-box; width: 100%; height: 100%; padding: 0 !important; }
 	.css-c5dwha > :nth-child(2) { display: none !important; }
 	.css-2a3s92 {
 		box-sizing: border-box;
-		width: min(94%, 1240px) !important;
-		max-width: 1240px;
-		margin: 0 auto;
+		width: 100% !important;
+		max-width: none;
+		height: 100%;
+		margin: 0;
 		padding: 14px 18px !important;
 		color: #29232e !important;
 		background: #fffdfa !important;
 		border: 1px solid #e6ded2 !important;
-		border-radius: 14px;
-		box-shadow: 0 8px 24px rgba(47,36,50,.055);
+		border-radius: 0;
+		box-shadow: none;
 	}
 	.header-title { margin-top: 0; color: #382b43 !important; font-size: 24px; line-height: 1.2; font-weight: 700; letter-spacing: -.025em; }
 	.css-u6nk4 { height: 0 !important; margin: 0 !important; padding: 0 !important; font-size: 0 !important; opacity: 0 !important; }
@@ -84,9 +85,10 @@
 	.badger { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; background: #2c2235; z-index: 91000; animation: slideUp .6s ease forwards; animation-delay: .8s; }
 	@keyframes slideUp { to { opacity: 0; visibility: hidden; } }
 	@media (max-width: 720px) {
-		html, body { overflow: hidden; }
-		.css-c5dwha { height: auto; padding: 8px 10px 16px !important; }
-		.css-2a3s92 { width: 98% !important; padding: 12px !important; }
+		html, body { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
+		#root, .css-r3u2tt, .css-c5dwha { height: auto; }
+		.css-c5dwha { padding: 0 !important; }
+		.css-2a3s92 { width: 100% !important; height: auto; min-height: 100vh; padding: 12px !important; border-radius: 0; }
 		.css-1yk5n7g { flex-direction: column !important; align-items: stretch !important; gap: 16px; }
 		.css-11ze7cv, .chakra-stack.css-qkd4np { width: 100% !important; }
 		.css-19kzupo { padding: 70px 14px !important; }
