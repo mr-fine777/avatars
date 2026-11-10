@@ -75,7 +75,32 @@
 	.css-2z7te8 { height: var(--viewer-height) !important; min-height: 0; position: relative; isolation: isolate; background: #f2eee8 !important; border: 1px solid #e6ded2; border-radius: 12px; overflow: hidden; }
 	.css-2z7te8 > div { position: relative; z-index: 1; height: 100% !important; background: transparent !important; }
 	canvas { display: block; width: 100% !important; height: 100% !important; object-fit: contain; border: 0 !important; border-radius: 12px; background: transparent !important; }
-	.avatar-preview-frame { position: relative !important; }
+		.avatar-preview-frame {
+		box-sizing: border-box !important;
+		position: relative !important;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		width: 100% !important;
+		height: var(--viewer-height) !important;
+		min-height: var(--viewer-height) !important;
+		max-height: var(--viewer-height) !important;
+		margin-top: 31px !important;
+		padding: 0 !important;
+		border: 1px solid #e6ded2 !important;
+		border-radius: 12px !important;
+		background: #faf8f4 !important;
+		overflow: hidden !important;
+	}
+	.avatar-preview-frame > img {
+		display: block !important;
+		width: 100% !important;
+		height: 100% !important;
+		max-width: 100% !important;
+		max-height: 100% !important;
+		object-fit: contain !important;
+		object-position: center !important;
+	}
 	.avatar-unload-corner {
 		position: absolute;
 		top: 10px;
