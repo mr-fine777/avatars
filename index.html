@@ -13,20 +13,28 @@
 	html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #f7f4ef; }
 	body { color: #29232e; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
 	#root, .css-r3u2tt { width: 100%; height: 100%; max-width: 100% !important; background: transparent !important; }
-	.css-c5dwha { box-sizing: border-box; width: 100%; height: 100%; padding: 0 !important; }
+	.css-c5dwha {
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		padding: clamp(18px, 3vh, 32px) clamp(18px, 3vw, 40px) !important;
+	}
 	.css-c5dwha > :nth-child(2) { display: none !important; }
 	.css-2a3s92 {
 		box-sizing: border-box;
-		width: 100% !important;
-		max-width: none;
-		height: 100%;
-		margin: 0;
-		padding: 14px 18px !important;
+		width: min(100%, 1160px) !important;
+		max-width: 1160px;
+		height: auto;
+		margin: auto;
+		padding: clamp(20px, 2vw, 30px) !important;
 		color: #29232e !important;
 		background: #fffdfa !important;
 		border: 1px solid #e6ded2 !important;
-		border-radius: 0;
-		box-shadow: none;
+		border-radius: 16px;
+		box-shadow: 0 12px 30px rgba(47,36,50,.07);
 	}
 	.header-title { margin-top: 0; color: #382b43 !important; font-size: 24px; line-height: 1.2; font-weight: 700; letter-spacing: -.025em; }
 	.css-u6nk4 { height: 0 !important; margin: 0 !important; padding: 0 !important; font-size: 0 !important; opacity: 0 !important; }
@@ -40,15 +48,15 @@
 		display: flex;
 		flex-direction: row !important;
 		align-items: stretch !important;
-		gap: 24px;
+		gap: clamp(18px, 2vw, 30px);
 		padding-top: 5px !important;
 		padding-bottom: 5px !important;
 	}
-	.css-11ze7cv, .chakra-stack.css-qkd4np { box-sizing: border-box; width: calc(50% - 12px) !important; min-width: 0; }
+	.css-11ze7cv, .chakra-stack.css-qkd4np { box-sizing: border-box; width: calc(50% - clamp(9px, 1vw, 15px)) !important; min-width: 0; }
 	.css-19kzupo {
 		box-sizing: border-box;
 		margin-top: 15px !important;
-		padding: clamp(140px, calc(50vh - 180px), 220px) 18px !important;
+		padding: clamp(130px, calc(50vh - 185px), 200px) 18px !important;
 		background: #faf8f4;
 		border: 1px dashed #cfc3b3 !important;
 		border-radius: 12px !important;
@@ -57,7 +65,7 @@
 	.css-o437tp[aria-selected="true"] { color: #382b43 !important; background: #efe7da !important; border-color: #d7c7ac !important; }
 	.css-1rggdzb { border-color: #b8a8ba !important; color: #382b43 !important; }
 	.css-1rggdzb[data-checked] { background: #382b43 !important; border-color: #382b43 !important; color: #fffdfa !important; }
-	.css-2z7te8 { height: min(500px, calc(100vh - 300px)) !important; min-height: 340px; background: #f2eee8; border: 1px solid #e6ded2; border-radius: 12px; overflow: hidden; }
+	.css-2z7te8 { height: min(380px, calc(100vh - 220px)) !important; min-height: 240px; background: #f2eee8; border: 1px solid #e6ded2; border-radius: 12px; overflow: hidden; }
 	.css-2z7te8 > div { height: 100% !important; }
 	canvas { display: block; width: 100% !important; height: 100% !important; object-fit: contain; border: 0 !important; border-radius: 12px; background: #f2eee8 !important; }
 	.avatar-preview-frame { position: relative !important; }
@@ -87,12 +95,12 @@
 	@media (max-width: 720px) {
 		html, body { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
 		#root, .css-r3u2tt, .css-c5dwha { height: auto; }
-		.css-c5dwha { padding: 0 !important; }
-		.css-2a3s92 { width: 100% !important; height: auto; min-height: 100vh; padding: 12px !important; border-radius: 0; }
+		.css-c5dwha { align-items: stretch; justify-content: flex-start; padding: 16px 12px 24px !important; }
+		.css-2a3s92 { width: 100% !important; height: auto; min-height: 0; margin: 0 auto; padding: 18px !important; border-radius: 14px; }
 		.css-1yk5n7g { flex-direction: column !important; align-items: stretch !important; gap: 16px; }
 		.css-11ze7cv, .chakra-stack.css-qkd4np { width: 100% !important; }
-		.css-19kzupo { padding: 70px 14px !important; }
-		.css-2z7te8 { height: min(320px, calc(100vh - 390px)) !important; min-height: 220px; }
+		.css-19kzupo { padding: 76px 14px !important; }
+		.css-2z7te8 { height: min(320px, calc(100vh - 300px)) !important; min-height: 220px; }
 	}
 </style>
 
