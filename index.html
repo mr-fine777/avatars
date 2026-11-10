@@ -14,9 +14,10 @@
 	body { color: #29232e; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
 	#root, .css-r3u2tt { width: 100%; height: 100%; max-width: 100% !important; background: transparent !important; }
 	.css-c5dwha { box-sizing: border-box; width: 100%; height: 100%; padding: 10px 16px 16px !important; }
+	.css-c5dwha > :nth-child(2) { display: none !important; }
 	.css-2a3s92 {
 		box-sizing: border-box;
-		width: 80% !important;
+		width: min(94%, 1240px) !important;
 		max-width: 1240px;
 		margin: 0 auto;
 		padding: 14px 18px !important;
@@ -31,14 +32,22 @@
 	.chakra-text { color: transparent !important; font-size: 0 !important; }
 	.css-1quy9ws, .css-b4krml { font-size: 0 !important; }
 	[role="alert"] { height: 0; opacity: 0; overflow: hidden; }
-	.chakra-stack.css-lcf1zn, .css-1vtkxzj { display: none !important; }
+	.chakra-stack.css-lcf1zn:has(> .css-1vtkxzj), .css-1vtkxzj { display: none !important; }
 	.chakra-button__icon.css-1wh2kri { width: 0; height: 0; font-size: 0; user-select: none; }
 	.css-7ffsxx { margin-bottom: 0 !important; }
-	.css-1yk5n7g { padding-top: 5px !important; padding-bottom: 5px !important; }
+	.css-1yk5n7g {
+		display: flex;
+		flex-direction: row !important;
+		align-items: stretch !important;
+		gap: 24px;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+	}
+	.css-11ze7cv, .chakra-stack.css-qkd4np { box-sizing: border-box; width: calc(50% - 12px) !important; min-width: 0; }
 	.css-19kzupo {
 		box-sizing: border-box;
 		margin-top: 15px !important;
-		padding: 184px 18px !important;
+		padding: clamp(140px, calc(50vh - 180px), 220px) 18px !important;
 		background: #faf8f4;
 		border: 1px dashed #cfc3b3 !important;
 		border-radius: 12px !important;
@@ -47,19 +56,41 @@
 	.css-o437tp[aria-selected="true"] { color: #382b43 !important; background: #efe7da !important; border-color: #d7c7ac !important; }
 	.css-1rggdzb { border-color: #b8a8ba !important; color: #382b43 !important; }
 	.css-1rggdzb[data-checked] { background: #382b43 !important; border-color: #382b43 !important; color: #fffdfa !important; }
-	.css-2z7te8 { height: min(500px, calc(100vh - 260px)) !important; min-height: 360px; background: #f2eee8; border: 1px solid #e6ded2; border-radius: 12px; overflow: hidden; }
+	.css-2z7te8 { height: min(500px, calc(100vh - 300px)) !important; min-height: 340px; background: #f2eee8; border: 1px solid #e6ded2; border-radius: 12px; overflow: hidden; }
 	.css-2z7te8 > div { height: 100% !important; }
 	canvas { display: block; width: 100% !important; height: 100% !important; object-fit: contain; border: 0 !important; border-radius: 12px; background: #f2eee8 !important; }
+	.avatar-preview-frame { position: relative !important; }
+	.avatar-unload-corner {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 10;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		padding: 0;
+		border: 1px solid rgba(255,255,255,.72);
+		border-radius: 50%;
+		background: rgba(44,34,53,.88);
+		color: #fffdfa;
+		font: 500 23px/1 Inter, ui-sans-serif, system-ui, sans-serif;
+		cursor: pointer;
+		box-shadow: 0 2px 8px rgba(32,24,38,.2);
+	}
+	.avatar-unload-corner:hover { background: #574260; }
+	.avatar-unload-corner:focus-visible { outline: 3px solid #d5ad61; outline-offset: 2px; }
 	.badger { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; background: #2c2235; z-index: 91000; animation: slideUp .6s ease forwards; animation-delay: .8s; }
 	@keyframes slideUp { to { opacity: 0; visibility: hidden; } }
 	@media (max-width: 720px) {
-		html, body { overflow-y: auto; }
+		html, body { overflow: hidden; }
 		.css-c5dwha { height: auto; padding: 8px 10px 16px !important; }
-		.css-2a3s92 { width: 96% !important; padding: 12px !important; }
-		.css-1yk5n7g { flex-direction: column !important; align-items: stretch !important; }
+		.css-2a3s92 { width: 98% !important; padding: 12px !important; }
+		.css-1yk5n7g { flex-direction: column !important; align-items: stretch !important; gap: 16px; }
 		.css-11ze7cv, .chakra-stack.css-qkd4np { width: 100% !important; }
-		.css-19kzupo { padding: 90px 14px !important; }
-		.css-2z7te8 { height: 340px !important; min-height: 280px; }
+		.css-19kzupo { padding: 70px 14px !important; }
+		.css-2z7te8 { height: min(320px, calc(100vh - 390px)) !important; min-height: 220px; }
 	}
 </style>
 
@@ -176,5 +207,45 @@
             </div>
         </div>
     </div>
+<script>
+(function () {
+    const app = document.getElementById('root');
+    if (!app) return;
+
+    function addUnloadCorners() {
+        app.querySelectorAll('[role="tabpanel"]').forEach(function (panel) {
+            const image = panel.querySelector('img');
+            const oldButton = panel.querySelector('.avatar-unload-corner');
+            if (!image) {
+                if (oldButton) oldButton.remove();
+                return;
+            }
+
+            const imageFrame = image.parentElement;
+            if (!imageFrame) return;
+            imageFrame.classList.add('avatar-preview-frame');
+            if (imageFrame.querySelector('.avatar-unload-corner')) return;
+
+            const clearButton = document.createElement('button');
+            clearButton.type = 'button';
+            clearButton.className = 'avatar-unload-corner';
+            clearButton.setAttribute('aria-label', 'Unload image');
+            clearButton.title = 'Unload image';
+            clearButton.textContent = '×';
+            clearButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                const unload = panel.querySelector('button[aria-label="Unload"]');
+                if (unload) unload.click();
+            });
+            imageFrame.appendChild(clearButton);
+        });
+    }
+
+    const observer = new MutationObserver(addUnloadCorners);
+    observer.observe(app, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+    addUnloadCorners();
+})();
+</script>
 </body>
 </html>
