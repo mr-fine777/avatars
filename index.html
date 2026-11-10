@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Avatar Corrector</title>
 <script async="" src="./Clothing Preview for Roblox_files/js"></script>
-<script defer="defer" src="./Clothing Preview for Roblox_files/main.8f927e24.js.download"></script>
+<script defer="defer" src="./Clothing Preview for Roblox_files/main.8f927e24.js.download?v=skybox-1"></script>
 
 <style>
-	:root { color-scheme: light; }
+	:root { color-scheme: light; --viewer-height: min(380px, calc(100vh - 220px)); }
 	html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #f7f4ef; }
 	body { color: #29232e; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
 	#root, .css-r3u2tt { width: 100%; height: 100%; max-width: 100% !important; background: transparent !important; }
@@ -55,19 +55,26 @@
 	.css-11ze7cv, .chakra-stack.css-qkd4np { box-sizing: border-box; width: calc(50% - clamp(9px, 1vw, 15px)) !important; min-width: 0; }
 	.css-19kzupo {
 		box-sizing: border-box;
-		margin-top: 15px !important;
-		padding: clamp(130px, calc(50vh - 185px), 200px) 18px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: var(--viewer-height);
+		min-height: 0;
+		margin-top: 31px !important;
+		padding: 0 !important;
 		background: #faf8f4;
 		border: 1px dashed #cfc3b3 !important;
 		border-radius: 12px !important;
 	}
 	.css-o437tp { border-color: #e2d9cd !important; color: #5d5660; }
 	.css-o437tp[aria-selected="true"] { color: #382b43 !important; background: #efe7da !important; border-color: #d7c7ac !important; }
+	.chakra-tabs__tab-panel { padding: 0 !important; }
 	.css-1rggdzb { border-color: #b8a8ba !important; color: #382b43 !important; }
 	.css-1rggdzb[data-checked] { background: #382b43 !important; border-color: #382b43 !important; color: #fffdfa !important; }
-	.css-2z7te8 { height: min(380px, calc(100vh - 220px)) !important; min-height: 240px; background: #f2eee8; border: 1px solid #e6ded2; border-radius: 12px; overflow: hidden; }
+	.css-2z7te8 { height: var(--viewer-height) !important; min-height: 0; background-color: #f2eee8; background-image: url("./skybox.png") !important; background-position: center; background-size: cover; background-repeat: no-repeat; border: 1px solid #e6ded2; border-radius: 12px; overflow: hidden; }
 	.css-2z7te8 > div { height: 100% !important; }
-	canvas { display: block; width: 100% !important; height: 100% !important; object-fit: contain; border: 0 !important; border-radius: 12px; background: #f2eee8 !important; }
+	canvas { display: block; width: 100% !important; height: 100% !important; object-fit: contain; border: 0 !important; border-radius: 12px; background: transparent !important; }
 	.avatar-preview-frame { position: relative !important; }
 	.avatar-unload-corner {
 		position: absolute;
@@ -93,6 +100,7 @@
 	.badger { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; background: #2c2235; z-index: 91000; animation: slideUp .6s ease forwards; animation-delay: .8s; }
 	@keyframes slideUp { to { opacity: 0; visibility: hidden; } }
 	@media (max-width: 720px) {
+		:root { --viewer-height: min(320px, max(220px, calc(100vh - 300px))); }
 		html, body { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
 		#root, .css-r3u2tt, .css-c5dwha { height: auto; }
 		.css-c5dwha { align-items: stretch; justify-content: flex-start; padding: 16px 12px 24px !important; }
