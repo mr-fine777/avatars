@@ -135,18 +135,27 @@
 	.badger { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; background: #2c2235; z-index: 91000; animation: slideUp .6s ease forwards; animation-delay: .8s; }
 	@keyframes slideUp { to { opacity: 0; visibility: hidden; } }
 	@media (max-width: 720px) {
-		:root { --viewer-height: clamp(260px, 52svh, 360px); }
-		html, body { width: 100%; height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
-		#root, .css-r3u2tt, .css-c5dwha { width: 100%; height: auto; min-width: 0; }
-		.css-c5dwha { align-items: stretch; justify-content: flex-start; padding: 10px !important; }
-		.css-2a3s92 { width: 100% !important; max-width: 560px; height: auto; min-height: 0; margin: 0 auto; padding: 16px !important; border-radius: 14px; }
-		.css-1yk5n7g { width: 100%; flex-direction: column !important; align-items: stretch !important; gap: 12px; }
-		.css-11ze7cv, .chakra-stack.css-qkd4np { width: 100% !important; min-width: 0; }
-		.css-19kzupo { width: 100%; height: auto; min-height: 136px; max-height: 180px; margin-top: 10px !important; padding: 16px 10px !important; }
-		.css-2z7te8 { width: 100%; height: var(--viewer-height) !important; min-height: 240px; }
+		:root { --viewer-height: clamp(220px, 38svh, 280px); }
+		html, body { width: 100% !important; height: 100% !important; min-height: 100% !important; overflow: hidden !important; }
+		#root { width: 100% !important; height: 100dvh !important; min-width: 0; overflow-x: hidden !important; overflow-y: auto !important; overscroll-behavior: contain; scrollbar-width: none; }
+		#root::-webkit-scrollbar { display: none; }
+		#root .css-r3u2tt, #root .css-c5dwha { box-sizing: border-box; width: 100% !important; height: auto !important; min-width: 0; }
+		#root .css-c5dwha { align-items: stretch !important; justify-content: flex-start !important; padding: 8px !important; }
+		#root .css-2a3s92 { box-sizing: border-box !important; width: calc(100vw - 16px) !important; max-width: 520px !important; height: auto !important; min-height: 0; margin: 0 auto !important; padding: 12px !important; border-radius: 12px; }
+		#root .css-1yk5n7g { box-sizing: border-box; width: 100% !important; flex-direction: column !important; align-items: stretch !important; gap: 10px; }
+		#root .css-11ze7cv, #root .chakra-stack.css-qkd4np { box-sizing: border-box; width: 100% !important; min-width: 0; }
+		#root .css-19kzupo { box-sizing: border-box; width: 100% !important; height: auto !important; min-height: 112px; max-height: 140px; margin: 8px 0 0 !important; padding: 10px 8px !important; }
+		#root .css-2z7te8, #root .avatar-preview-frame { box-sizing: border-box; width: 100% !important; height: var(--viewer-height) !important; min-height: 200px !important; max-height: 280px !important; }
+		#root .chakra-wrap__list.css-umyqv7 { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 4px !important; width: 100% !important; }
+		#root .chakra-wrap__listitem { min-width: 0 !important; }
+		#root .chakra-radio.css-1pw6d56 { display: flex !important; align-items: center; justify-content: center; box-sizing: border-box; width: 100%; min-width: 0; min-height: 44px; padding: 4px 2px; }
+		#root .chakra-radio__label { font-size: clamp(11px, 3.5vw, 14px) !important; line-height: 1.15; white-space: nowrap; }
+		#root .css-o437tp { min-height: 44px; padding-inline: 12px; }
+		#root .css-19kzupo .chakra-text { color: #5d5660 !important; font-size: 14px !important; line-height: 1.3; }
+		#root canvas { display: block; width: 100% !important; max-width: 100% !important; height: 100% !important; touch-action: none; }
 	}
 	@media (max-width: 480px) {
-		:root { --viewer-height: clamp(260px, 56svh, 360px); }
+		:root { --viewer-height: clamp(210px, 36svh, 250px); }
 		.css-c5dwha { padding: 10px 8px 18px !important; }
 		.css-2a3s92 { padding: 14px !important; border-radius: 12px; }
 		.header-title { margin-bottom: 10px; font-size: 21px; }
