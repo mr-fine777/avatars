@@ -135,18 +135,18 @@
 	.badger { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; background: #2c2235; z-index: 91000; animation: slideUp .6s ease forwards; animation-delay: .8s; }
 	@keyframes slideUp { to { opacity: 0; visibility: hidden; } }
 	@media (max-width: 720px) {
-		:root { --viewer-height: min(320px, max(220px, calc(100dvh - 300px))); }
-		html, body { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
-		#root, .css-r3u2tt, .css-c5dwha { height: auto; }
-		.css-c5dwha { align-items: stretch; justify-content: flex-start; padding: 16px 12px 24px !important; }
-		.css-2a3s92 { width: 100% !important; height: auto; min-height: 0; margin: 0 auto; padding: 18px !important; border-radius: 14px; }
-		.css-1yk5n7g { flex-direction: column !important; align-items: stretch !important; gap: 16px; }
-		.css-11ze7cv, .chakra-stack.css-qkd4np { width: 100% !important; }
-		.css-19kzupo { padding: 76px 14px !important; }
-		.css-2z7te8 { height: min(320px, calc(100dvh - 300px)) !important; min-height: 220px; }
+		:root { --viewer-height: clamp(260px, 52svh, 360px); }
+		html, body { width: 100%; height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
+		#root, .css-r3u2tt, .css-c5dwha { width: 100%; height: auto; min-width: 0; }
+		.css-c5dwha { align-items: stretch; justify-content: flex-start; padding: 10px !important; }
+		.css-2a3s92 { width: 100% !important; max-width: 560px; height: auto; min-height: 0; margin: 0 auto; padding: 16px !important; border-radius: 14px; }
+		.css-1yk5n7g { width: 100%; flex-direction: column !important; align-items: stretch !important; gap: 12px; }
+		.css-11ze7cv, .chakra-stack.css-qkd4np { width: 100% !important; min-width: 0; }
+		.css-19kzupo { width: 100%; height: auto; min-height: 136px; max-height: 180px; margin-top: 10px !important; padding: 16px 10px !important; }
+		.css-2z7te8 { width: 100%; height: var(--viewer-height) !important; min-height: 240px; }
 	}
 	@media (max-width: 480px) {
-		:root { --viewer-height: clamp(200px, 42svh, 290px); }
+		:root { --viewer-height: clamp(260px, 56svh, 360px); }
 		.css-c5dwha { padding: 10px 8px 18px !important; }
 		.css-2a3s92 { padding: 14px !important; border-radius: 12px; }
 		.header-title { margin-bottom: 10px; font-size: 21px; }
@@ -155,8 +155,9 @@
 		.chakra-wrap__listitem { flex: 1 1 calc(50% - 6px); min-width: 0; }
 		.chakra-radio { display: flex; align-items: center; min-height: 44px; padding: 5px 8px; border-radius: 8px; }
 		.chakra-radio__label { font-size: 16px !important; line-height: 1.25; }
-		.css-19kzupo { margin-top: 14px !important; padding: 32px 12px !important; border-radius: 10px !important; }
-		.css-2z7te8 { height: var(--viewer-height) !important; min-height: 200px; border-radius: 10px; }
+		.css-19kzupo { min-height: 132px; max-height: 168px; margin-top: 8px !important; padding: 12px 8px !important; border-radius: 10px !important; }
+		.css-19kzupo .chakra-text { color: #5d5660 !important; font-size: 14px !important; line-height: 1.35; }
+		.css-2z7te8 { height: var(--viewer-height) !important; min-height: 240px; border-radius: 10px; }
 		canvas { max-width: 100% !important; touch-action: none; }
 	}
 	@media (max-height: 560px) and (max-width: 720px) {
