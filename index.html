@@ -3,13 +3,14 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f4ef">
 <title>Avatar Corrector</title>
 <script async="" src="./Clothing Preview for Roblox_files/js"></script>
 <script defer="defer" src="./Clothing Preview for Roblox_files/main.8f927e24.js.download?v=skybox-3"></script>
 
 <style>
-	:root { color-scheme: light; --viewer-height: min(380px, calc(100vh - 220px)); }
+	:root { color-scheme: light; --viewer-height: min(380px, calc(100dvh - 220px)); }
 	html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #f7f4ef; }
 	body { color: #29232e; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
 	#root, .css-r3u2tt { width: 100%; height: 100%; max-width: 100% !important; background: transparent !important; }
@@ -134,7 +135,7 @@
 	.badger { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; background: #2c2235; z-index: 91000; animation: slideUp .6s ease forwards; animation-delay: .8s; }
 	@keyframes slideUp { to { opacity: 0; visibility: hidden; } }
 	@media (max-width: 720px) {
-		:root { --viewer-height: min(320px, max(220px, calc(100vh - 300px))); }
+		:root { --viewer-height: min(320px, max(220px, calc(100dvh - 300px))); }
 		html, body { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
 		#root, .css-r3u2tt, .css-c5dwha { height: auto; }
 		.css-c5dwha { align-items: stretch; justify-content: flex-start; padding: 16px 12px 24px !important; }
@@ -142,15 +143,35 @@
 		.css-1yk5n7g { flex-direction: column !important; align-items: stretch !important; gap: 16px; }
 		.css-11ze7cv, .chakra-stack.css-qkd4np { width: 100% !important; }
 		.css-19kzupo { padding: 76px 14px !important; }
-		.css-2z7te8 { height: min(320px, calc(100vh - 300px)) !important; min-height: 220px; }
+		.css-2z7te8 { height: min(320px, calc(100dvh - 300px)) !important; min-height: 220px; }
 	}
+	@media (max-width: 480px) {
+		:root { --viewer-height: clamp(200px, 42svh, 290px); }
+		.css-c5dwha { padding: 10px 8px 18px !important; }
+		.css-2a3s92 { padding: 14px !important; border-radius: 12px; }
+		.header-title { margin-bottom: 10px; font-size: 21px; }
+		.css-1yk5n7g { gap: 12px; }
+		.chakra-wrap__list { display: flex; flex-wrap: wrap; gap: 6px; }
+		.chakra-wrap__listitem { flex: 1 1 calc(50% - 6px); min-width: 0; }
+		.chakra-radio { display: flex; align-items: center; min-height: 44px; padding: 5px 8px; border-radius: 8px; }
+		.chakra-radio__label { font-size: 16px !important; line-height: 1.25; }
+		.css-19kzupo { margin-top: 14px !important; padding: 32px 12px !important; border-radius: 10px !important; }
+		.css-2z7te8 { height: var(--viewer-height) !important; min-height: 200px; border-radius: 10px; }
+		canvas { max-width: 100% !important; touch-action: none; }
+	}
+	@media (max-height: 560px) and (max-width: 720px) {
+		:root { --viewer-height: 200px; }
+		.css-c5dwha { padding-top: 8px !important; }
+		.css-2a3s92 { padding-top: 12px !important; padding-bottom: 12px !important; }
+	}
+	@media (prefers-reduced-motion: reduce) { .badger { animation: none; opacity: 0; visibility: hidden; } }
 </style>
 
 </head>
-<div class="badger">
-    <img src="img.png" style="height: 80px;;"load="eager">
-</div>
 <body class="chakra-ui-light">
+<div class="badger" aria-hidden="true">
+    <img src="img.png" alt="" width="80" height="80" loading="eager">
+</div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
         <div class="css-r3u2tt">
@@ -160,7 +181,7 @@
                     <div class="chakra-stack css-1yk5n7g">
                         <div class="css-11ze7cv">
                             <div class="chakra-stack css-owjkmg">
-                                <h2 class="header-title">Avatar Corrector</h2>
+                                <h1 class="header-title">Avatar Corrector</h1>
                                 <div role="radiogroup" class="chakra-radio-group css-0">
                                     <div class="chakra-wrap css-0">
                                         <ul class="chakra-wrap__list css-umyqv7">
